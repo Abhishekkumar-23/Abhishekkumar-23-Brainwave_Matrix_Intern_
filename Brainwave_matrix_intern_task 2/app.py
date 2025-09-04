@@ -1,14 +1,14 @@
 import streamlit as st
 import pickle
 import re
-from sklearn.feature_extraction import text
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
 # Load model and vectorizer
 model = pickle.load(open("sentiment_model.pkl", "rb"))
 vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
 
 # Use sklearn's built-in stopwords
-STOPWORDS = text.ENGLISH_STOP_WORDS
+STOPWORDS = ENGLISH_STOP_WORDS
 
 # Preprocessing function
 def clean_text(content):
@@ -35,5 +35,3 @@ if st.button("Analyze Sentiment"):
             st.success("✅ Positive Tweet")
     else:
         st.warning("⚠️ Please enter a tweet before analyzing.")
-
-
