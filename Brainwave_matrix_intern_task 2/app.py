@@ -1,4 +1,4 @@
-ximport streamlit as st
+import streamlit as st
 import pickle
 import re
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
@@ -35,3 +35,4 @@ if st.button("Analyze Sentiment"):
             st.success("✅ Positive Tweet")
     else:
         st.warning("⚠️ Please enter a tweet before analyzing.")
+
